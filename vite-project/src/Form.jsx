@@ -54,7 +54,7 @@ function Form() {
         value={id_hotel} 
         onChange={(e) => setId_hotel(e.target.value)}
         />
-
+        <br />
 
         <label htmlFor="nombre">Ingrese el nombre</label>
         <input 
@@ -64,6 +64,7 @@ function Form() {
         value={nombre}
         onChange={(e) => setNombre(e.target.value)}
         />
+        <br />
 
         <label htmlFor="direccion">Ingrese la direccion</label>
         <input type="text"
@@ -72,6 +73,7 @@ function Form() {
         value={Direccion}
         onChange={(e) => setDireccion(e.target.value)}
         />
+        <br />
 
         <label htmlFor="telefono">Ingrese el telefono</label>
         <input type="number"
@@ -80,6 +82,7 @@ function Form() {
         value={Telefono}
         onChange={(e) => setTelefono(e.target.value)}
         />
+        <br />
 
         <label htmlFor="precio">Ingrese el precio</label>
         <input type="number" 
@@ -88,6 +91,7 @@ function Form() {
         value={Precio}
         onChange={(e) => setPrecio(e.target.value)}
         />
+        <br />
 
         <label htmlFor="codigo_destino">Selecione el Codigo Destino</label>
         <select
