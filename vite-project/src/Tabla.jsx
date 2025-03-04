@@ -22,14 +22,23 @@ export default function Tabla() {
 
   function deleteHotels(id) {
     fetch(`http://localhost:8000/api/hotel/${id}`, {
-      method: 'DELETE',
+      method: 'DELETE'
     })
       .then(function (res) {
-        return res.json();
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.text(); // Primero obtén el texto de la respuesta
       })
-      .then(function (data) {
-        console.log(data);
-        fetchHotels();
+      .then(function (text) {
+        try {
+          const data = JSON.parse(text); // Intenta parsear el texto como JSON
+          console.log(data);
+          fetchHotels();
+        } catch (err) {
+          console.error('Error parsing JSON:', err);
+          console.log('Response text:', text);
+        }
       })
       .catch(function (err) {
         console.log('Error:', err);
